@@ -10,6 +10,5 @@ import { ComponentesComponent } from './componentes/componentes.component';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'componentes';
   constructor(){}
 }
