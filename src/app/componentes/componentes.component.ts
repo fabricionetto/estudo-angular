@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-componentes',
@@ -7,12 +7,20 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './componentes.component.html',
   styleUrl: './componentes.component.css'
 })
-export class ComponentesComponent implements OnInit{
+export class ComponentesComponent implements OnInit, OnChanges{
 
-  nome:string = 'Jose'
-  constructor(){}
+  @Input() nome:string = ''
+  
   ngOnInit(): void {
-    this.nome = `Ola ${this.nome}`
+    console.log("Componentente nasceu!");
   }
 
+  ngOnChanges(): void {
+    console.log("detectei alteração");
+  }
+  
+  constructor(){
+    console.log("Construtor");
+  }
+  
 }
