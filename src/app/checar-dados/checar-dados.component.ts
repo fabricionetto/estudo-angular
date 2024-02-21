@@ -21,28 +21,48 @@ AfterContentInit,
 AfterContentChecked,
 AfterViewInit,
 AfterViewChecked  {
-
+ qunt:number = 0;
   constructor(){}
-  ngAfterViewChecked(): void {
-    throw new Error('fterViewChecked');
+
+  adicionar(){
+    this.qunt += 1
   }
-  ngAfterViewInit(): void {
-    throw new Error('fterViewInit');
+
+  diminuir(){
+    this.qunt -= 1
   }
+
+  //checked --> content --> view
+
+  //Quando primeiro conteudo iniciado
   ngAfterContentInit(): void {
-    throw new Error('AfterContentInit');
+    console.log('AfterContentInit');
   }
-  ngAfterContentChecked(): void {
-    throw new Error('fterContentChecked');
+
+ //depois inicialização da view
+ ngAfterViewInit(): void {
+  console.log('fterViewInit');
+}
+
+ //apos alguma alteração, verifica conteudo
+ ngAfterContentChecked(): void {
+  console.log('fterContentChecked');
+}
+
+//apos alguma alteração verifica a view
+  ngAfterViewChecked(): void {
+    console.log('fterViewChecked');
   }
+ 
+ 
   ngDoCheck(): void {
-    throw new Error('DoChec');
+    console.log('DoChec');
   }
   ngOnChanges(): void {
-    throw new Error('OnChanges');
+    console.log('OnChanges');
   }
   ngOnInit(): void {
-    throw new Error('OnInit');
+    console.log('OnInit');
   }
 
 }
